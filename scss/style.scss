@@ -1,0 +1,410 @@
+@import url("/font/stylesheet.css");
+
+*::after,
+*::before,
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: Qanelas;
+   color: #fff;
+}
+body {
+   background: #1e2538;
+}
+@mixin flex() {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-size: inherit;
+   font-weight: inherit;
+}
+ol,
+ul {
+   list-style: none;
+}
+a {
+   text-decoration: none;
+}
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+}
+.container {
+   max-width: 1432px;
+   margin: 0 auto;
+}
+.btn {
+   padding: 13px 46px;
+}
+
+.header {
+   &__container {
+      @include flex();
+      justify-content: space-between;
+      margin-top: 24px;
+   }
+
+   &__logo-box {
+      @include flex();
+      flex-direction: column;
+   }
+
+   &__logo-top {
+      @include flex();
+      gap: 6px;
+      font-size: 25px;
+      font-weight: 800;
+      span {
+         margin-right: -6px;
+         color: #3657cb;
+      }
+   }
+
+   &__logo-img {
+   }
+
+   &__social-network {
+      margin-top: 10px;
+   }
+
+   &__nav {
+      ul {
+         @include flex();
+         gap: 48px;
+      }
+   }
+
+   &__link {
+      font-size: 17px;
+      font-weight: 700;
+   }
+
+   &__search {
+   }
+
+   &__btn {
+      border-radius: 10px;
+      background: #3657cb;
+      box-shadow: 0px 0px 15px 0px rgba(72, 113, 255, 0.8);
+      font-weight: 700;
+      line-height: 166.5%;
+   }
+   &__right {
+      @include flex();
+      gap: 12px;
+   }
+}
+/* -----------------------------------main -------------------------------------*/
+.main {
+}
+
+// _______________now_________
+.now {
+   &__container {
+      margin-top: 50px;
+   }
+
+   &__top {
+      @include flex();
+      justify-content: space-between;
+   }
+}
+.sec-top {
+   &__title {
+      font-size: 65px;
+      font-weight: 900;
+   }
+
+   &__mini-line {
+      width: 51.5px;
+      height: 1.7px;
+      border-radius: 3px;
+      margin-top: 10px;
+
+      background-color: #fff;
+   }
+
+   &__nav {
+      font-size: 18px;
+      font-weight: 700;
+
+      margin-top: 10px;
+
+      ul {
+         @include flex();
+         gap: 36px;
+      }
+   }
+   &__more {
+      @include flex();
+      gap: 27px;
+   }
+}
+
+.items-wrapper {
+   @include flex();
+   gap: 21px;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   margin-top: 64px;
+}
+.item {
+   font-size: 18px;
+   font-weight: 700;
+   &__top {
+      position: relative;
+      img {
+         border-radius: 8px;
+      }
+   }
+
+   &__bottom {
+   }
+
+   &__title {
+   }
+
+   &__p {
+      color: #f2f60f;
+      font-size: 15px;
+      font-weight: 400;
+   }
+
+   &__reyting {
+      width: 62.275px;
+      height: 33.214px;
+      background-color: #89cb36;
+      border-radius: 3px;
+
+      position: absolute;
+      top: 12.45px;
+      right: 12.45px;
+      @include flex();
+   }
+}
+.more {
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 166.5%; /* 29.97px */
+   border-radius: 10px;
+
+   border: 2px solid #fff;
+   background-color: transparent;
+
+   margin-top: 50px;
+   padding: 22px 46px;
+
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
+}
+.trailer {
+   &__container {
+   }
+
+   &__top {
+      margin-top: 54px;
+      @include flex();
+      justify-content: space-between;
+   }
+   &__item {
+   }
+
+   &__scroll {
+      @include flex();
+      justify-content: flex-start;
+      gap: 20px;
+      overflow-x: auto;
+      padding: 0 10px 20px;
+      margin-top: 20px;
+   }
+}
+
+.scroll-bar {
+   &__item {
+      display: inline-flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+      &:first-child {
+         margin-left: 10px;
+      }
+      &:last-child {
+         margin-right: 10px;
+      }
+      img {
+         border-radius: 6px;
+      }
+      h5 {
+         font-size: 20px;
+         font-weight: 900;
+      }
+      &-play {
+         width: 35px;
+         height: 31px;
+
+         position: absolute;
+         top: 42%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+      }
+   }
+   &::-webkit-scrollbar {
+      border-radius: 10px;
+      background: #1b2133;
+      height: 7px;
+   }
+
+   /* ползунок скроллбара */
+   &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background: #3657cb;
+   }
+}
+
+.tr-item {
+   &__top {
+      position: relative;
+      img {
+         border-radius: 12px;
+      }
+   }
+
+   &__play {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+   }
+
+   &__bottom {
+      @include flex();
+      justify-content: space-between;
+      margin-top: 26px;
+   }
+
+   &__left {
+      @include flex();
+      gap: 34px;
+   }
+
+   &__title {
+      font-size: 45px;
+      font-weight: 900;
+   }
+
+   &__right {
+      @include flex();
+      gap: 8px;
+   }
+
+   &__like-box {
+      @include flex();
+      flex-direction: column;
+      gap: 8px;
+      p {
+         font-size: 15px;
+         font-weight: 400;
+      }
+   }
+
+   &__like {
+      padding: 12px 16px 20px;
+      border-radius: 10px;
+      background: #1b2133;
+   }
+   .des-like {
+      padding: 20px 16px 12px;
+   }
+}
+.cl-net {
+   @include flex();
+   gap: 18px;
+}
+
+.popular {
+   &__container {
+   }
+
+   &__top {
+      @include flex();
+      justify-content: space-between;
+      margin-top: 78px;
+   }
+   &__wrapper {
+      flex-wrap: nowrap;
+      overflow: hidden;
+   }
+}
+
+.arrows {
+   @include flex();
+   gap: 20px;
+
+   position: relative;
+   left: 50%;
+   transform: translateX(-50%);
+
+   margin-top: 54px;
+   &__one {
+      transform: rotate(180deg);
+   }
+
+   &__two {
+   }
+}
+
+.footer {
+   background: #151a26;
+   padding:  0 0 50px 0;
+   &__container {
+      margin-top: 75px;
+   }
+
+   &__top {
+      @include flex();
+      justify-content: space-between;
+      .arrows {
+         position: static;
+         transform: none;
+         margin-top: 0;
+      }
+   }
+   &__end {
+      @include flex();
+      flex-direction: column;
+      img{
+         margin-bottom: 34px;
+      }
+      margin: 60px 0px 0 0px ;
+   }
+
+   &__io {
+      color: rgba(227, 230, 240, 0.72);
+      text-align: center;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 119%; /* 17.85px */
+      margin-top: 40px;
+   }
+
+   &__polit {
+      color: rgba(227, 230, 240, 0.72);
+      text-align: center;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 119%; /* 17.85px */
+      text-decoration-line: underline;
+      margin-top: 26px;
+   }
+}
