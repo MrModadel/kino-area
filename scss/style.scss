@@ -38,11 +38,13 @@ a {
    overflow: hidden;
 }
 .container {
-   max-width: 1432px;
+   max-width: 1920px;
+   width: 90%;
    margin: 0 auto;
 }
 .btn {
-   padding: 13px 46px;
+   padding: 0 40px;
+   height: 32px;
 }
 
 .header {
@@ -78,24 +80,43 @@ a {
    &__nav {
       ul {
          @include flex();
-         gap: 48px;
+         gap: 20px;
       }
    }
 
    &__link {
-      font-size: 17px;
-      font-weight: 700;
+      font-weight: 600;
    }
 
    &__search {
+      input {
+         width: 30px;
+         height: 30px;
+         outline: none;
+         background-image: url("/public/icons/search.svg");
+         padding: 0 10px;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: 14px;
+         border-radius: 6px;
+         border: 0;
+         box-shadow: 0 0 7px #fff;
+      }
    }
 
    &__btn {
-      border-radius: 10px;
+      border-radius: 7px;
       background: #3657cb;
       box-shadow: 0px 0px 15px 0px rgba(72, 113, 255, 0.8);
       font-weight: 700;
-      line-height: 166.5%;
+      transition: all 0.3s ease;
+      @include flex();
+      &:hover {
+         box-shadow: none;
+      }
+      &:active {
+         scale: 0.8;
+      }
    }
    &__right {
       @include flex();
@@ -103,8 +124,6 @@ a {
    }
 }
 /* -----------------------------------main -------------------------------------*/
-.main {
-}
 
 // _______________now_________
 .now {
@@ -119,8 +138,8 @@ a {
 }
 .sec-top {
    &__title {
-      font-size: 65px;
-      font-weight: 900;
+      font-size: 44px;
+      font-weight: 800;
    }
 
    &__mini-line {
@@ -140,7 +159,7 @@ a {
 
       ul {
          @include flex();
-         gap: 36px;
+         gap: 20px;
       }
    }
    &__more {
@@ -150,19 +169,59 @@ a {
 }
 
 .items-wrapper {
-   @include flex();
+   display: grid;
+   grid-template-columns: repeat(4, minmax(0, 1fr));
+   justify-items: center;
    gap: 21px;
-   justify-content: flex-start;
-   flex-wrap: wrap;
    margin-top: 64px;
 }
 .item {
+   width: 100%;
+   max-width: 250px;
    font-size: 18px;
    font-weight: 700;
    &__top {
       position: relative;
+      width: 100%;
+      height: 360.559px;
+      transition: all 0.3s ease;
       img {
+         width: 100%;
+         height: 100%;
          border-radius: 8px;
+      }
+      .blue-effect {
+         width: 100%;
+         height: 100%;
+         border-radius: 10px;
+         background: rgba(54, 87, 203, 0.65);
+         position: absolute;
+         top: 0;
+         left: 0;
+         @include flex();
+         opacity: 0;
+         transition: all 0.3s ease;
+         button {
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0px 0px 10px 0px rgba(55, 94, 232, 0.4);
+            color: #3657cb;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 166.5%; /* 29.97px */
+            border: 0;
+            transition: all 0.3s ease;
+            padding: 10px 20px;
+            cursor: pointer;
+            &:active {
+               scale: 0.7;
+               transition: all 0.3s ease;
+            }
+         }
+         &:hover {
+            opacity: 1;
+            transition: all 0.3s ease;
+         }
       }
    }
 
@@ -200,12 +259,15 @@ a {
    background-color: transparent;
 
    margin-top: 50px;
-   padding: 22px 46px;
+   padding: 23px 46px;
 
    position: relative;
    left: 50%;
    transform: translateX(-50%);
+
+   @include flex();
 }
+// ______________trailer_____
 .trailer {
    &__container {
    }
@@ -277,6 +339,10 @@ a {
       img {
          border-radius: 12px;
       }
+      .main-img {
+         width: 100%;
+         height: 100%;
+      }
    }
 
    &__play {
@@ -331,7 +397,7 @@ a {
    @include flex();
    gap: 18px;
 }
-
+// ______________popular_____
 .popular {
    &__container {
    }
@@ -363,10 +429,11 @@ a {
    &__two {
    }
 }
+/* -----------------------------------footer-------------------------------------*/
 
 .footer {
    background: #151a26;
-   padding:  0 0 50px 0;
+   padding: 0 0 50px 0;
    &__container {
       margin-top: 75px;
    }
@@ -383,10 +450,10 @@ a {
    &__end {
       @include flex();
       flex-direction: column;
-      img{
+      img {
          margin-bottom: 34px;
       }
-      margin: 60px 0px 0 0px ;
+      margin: 60px 0px 0 0px;
    }
 
    &__io {
@@ -406,5 +473,91 @@ a {
       line-height: 119%; /* 17.85px */
       text-decoration-line: underline;
       margin-top: 26px;
+   }
+}
+
+/* -----------------------------------pages-------------------------------------*/
+// ______________card_____
+.info {
+   &__container {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 40% 60%;
+      max-width: 1164px;
+   }
+   .left {
+      img {
+         width: 395px;
+         height: 540px;
+         object-fit: contain;
+         border-radius: 10px;
+      }
+   }
+   .right {
+      @include flex();
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 40px;
+      justify-content: flex-start;
+      &__location {
+         color: #4f5b7c;
+         font-family: Qanelas;
+         font-size: 16px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: 168.7%; /* 26.992px */
+         span {
+            color: #fff;
+            font-family: Qanelas;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 168.7%;
+         }
+      }
+
+      &__title {
+         color: #fff;
+         font-family: Qanelas;
+         font-size: 65px;
+         font-style: normal;
+         font-weight: 900;
+         line-height: normal;
+      }
+
+      &__suptitle {
+         color: #fff;
+         font-family: Qanelas;
+         font-size: 25px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+      }
+
+      &__description {
+         color: #fff;
+         font-family: Qanelas;
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: 166.5%; /* 33.3px */
+      }
+
+      &__button {
+         border-radius: 10px;
+         border: 2px solid #fff;
+         width: 260px;
+         height: 71px;
+         background-color: transparent;
+         @include flex();
+         gap: 10px;
+      }
+      .bottom {
+         @include flex();
+         justify-content: start;
+         gap: 40px;
+      }
+      .cl-net {
+      }
    }
 }
