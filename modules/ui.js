@@ -33,17 +33,17 @@ export function header_reload(place) {
 export function reload_item(place, arr) {
    place.innerHTML = ''
    for (let item of arr) {
-      place.innerHTML += `<div class="item" id="${item.id}">
+      place.innerHTML += `<div class="item" id="${item.kinopoiskId}">
       <div class="item__top">
-         <img src="${item.img}" alt="">
-         <div class="item__reyting">6.70</div>
+         <img src="${item.posterUrl}" alt="">
+         <div class="item__reyting"${item.ratingKinopoisk}</div>
          <div class="blue-effect">
             <button>Карточка фильма</button>
          </div>
       </div>
       <div class="item__bottom">
-         <h4 class="item__title">${item.title}</h4>
-         <p class="item__p">${item.description}</p>
+         <h4 class="item__title">${item.nameRu}</h4>
+         <p class="item__p">${item.type}</p>
       </div>
    </div>`
    }
@@ -51,7 +51,7 @@ export function reload_item(place, arr) {
    items.forEach(item => {
       let button = item.querySelector('button');
       button.onclick = () => {
-         location.assign(`http://localhost:5173/pages/card/index.html?itemId=${item.id}`);
+         location.assign(`pages/card/?itemId=${item.id}`);
       }
    });
 }

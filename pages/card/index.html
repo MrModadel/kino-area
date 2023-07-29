@@ -8,11 +8,76 @@
    <title>Document</title>
    <link rel="stylesheet" href="/scss/style.scss">
    <style>
-      body{
+      body {
          background-image: url('/public/icons/А\ 1.png');
          background-repeat: no-repeat;
          background-size: cover;
-         background-position: 100%;
+         background-position: top;
+      }
+
+      body::after {
+         content: "";
+         display: block;
+         width: 100%;
+         height: 400px;
+         position: absolute;
+         bottom: 0px;
+         z-index: -1;
+         background: linear-gradient(transparent, #1e2538);
+      }
+
+      body::before {
+         content: "";
+         display: block;
+         width: 100%;
+         height: 400px;
+         position: absolute;
+         top: 0px;
+         z-index: -1;
+         background: linear-gradient(#1e2538, transparent);
+      }
+
+      .chart canvas {
+         width: 52px;
+         height: 52px;
+         max-width: 52px;
+         max-height: 52px;
+         background-color: rgba(75, 203, 54, 0.30);
+         border-radius: 50%;
+      }
+
+      .chart {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         gap: 22px;
+      }
+
+      .chart .name {
+         color: #FFF;
+         text-align: center;
+         font-size: 15px;
+         font-weight: 500;
+      }
+
+      .chart .box {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         gap: 10px;
+         position: relative;
+
+      }
+
+      .chart span {
+         color: #FFF;
+         font-size: 13px;
+         font-weight: 700;
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         top: 18px;
       }
    </style>
 </head>
@@ -28,7 +93,22 @@
                <div class="right__location">Главная > Фильмы > <span>Побег из Претории</span></div>
                <div class="right__title">Побег из Претории</div>
                <div class="right__suptitle">Escape from Pretoria</div>
-               <div class="right__description">Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план — это только первый шаг. Шаг второй — реализация плана.</div>
+               <div class="chart">
+                  <div class="box">
+                     <span></span>
+                     <canvas id='myChart'>
+                     </canvas>
+                     <div class="name">Kinoarea</div>
+                  </div>
+                  <div class="box">
+                     <span></span>
+                     <canvas id='myChart_two'></canvas>
+                     <div class="name">IMDb</div>
+                  </div>
+               </div>
+               <div class="right__description">Двое борцов за свободу отбывают срок в одной из самых строгих тюрем мира
+                  — в «Претории». Вместе с другими узниками они планируют дерзкий и опасный побег. Но придумать план —
+                  это только первый шаг. Шаг второй — реализация плана.</div>
                <div class="bottom">
                   <button class="right__button"><img src="/public/icons/play_mini.svg" alt="">Смотреть трейлер</button>
                   <div class="cl-net">
@@ -39,7 +119,55 @@
             </div>
          </div>
       </div>
+      <div class="down">
+         <div class="down__top">
+            <div class="down__like">
+               <img src="/public/icons/like.svg" alt="">
+            </div>
+            <div class="down__like des-like">
+               <img src="/public/icons/des-like.svg" alt="">
+            </div>
+            <div class="down__reating">
+               <div class="down__green"></div>
+               <p>Рейтинг ожиданий 85%</p>
+            </div>
+            <div class="down__favorites">
+               <div class="down__heart">
+                  <img src="/public/icons/heart.svg" alt="">
+               </div>
+               В избранном у 37933 человек
+            </div>
+         </div>
+
+      </div>
+      <!-- <div class="more-info">
+         <div class="more-info__container">
+            <div class="more-info__nav">
+               <ul>
+                  <li>
+                     <p>Год</p><a href="#" data-type="year"></a>
+                  </li>
+                  <li>
+                     <p>Страна</p><a href="#" data-type="countries"></a>
+                  </li>
+                  <li>
+                     <p>Слоган</p><a href="#" data-type="slogan"></a>
+                  </li>
+                  <li>
+                     <p>Жанр</p><a href="#" data-type="genres"></a>
+                  </li>
+                  <li>
+                     <p>Возраст</p><a href="#" data-type="ratingAgeLimits"></a>
+                  </li>
+                  <li>
+                     <p>Время</p><a href="#" data-type="countries"></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div> -->
    </div>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    <script src="index.js" type="module"></script>
 </body>
 

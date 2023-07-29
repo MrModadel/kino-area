@@ -487,7 +487,7 @@ a {
    }
    .left {
       img {
-         width: 395px;
+         width: 360px;
          height: 540px;
          object-fit: contain;
          border-radius: 10px;
@@ -497,7 +497,7 @@ a {
       @include flex();
       flex-direction: column;
       align-items: flex-start;
-      gap: 40px;
+      gap: 10px;
       justify-content: flex-start;
       &__location {
          color: #4f5b7c;
@@ -541,6 +541,9 @@ a {
          font-style: normal;
          font-weight: 500;
          line-height: 166.5%; /* 33.3px */
+         background-color: black;
+         padding: 10px 20px;
+         border-radius: 12px;
       }
 
       &__button {
@@ -560,4 +563,70 @@ a {
       .cl-net {
       }
    }
+}
+
+.down {
+   max-width: 1164px;
+   margin: 10px auto 0;
+   &__top {
+      @include flex();
+      gap: 16px;
+      justify-content: flex-start;
+   }
+   &__like {
+      border-radius: 10px;
+      background: #1b2133;
+
+      width: 58.871px;
+      height: 58.871px;
+      @include flex();
+   }
+
+   &__reating {
+      width: 185px;
+      height: 59px;
+      border-radius: 5px;
+      background: #1b2133;
+      @include flex();
+      justify-content: flex-start;
+      position: relative;
+
+      p {
+         color: #57d043;
+         font-size: 14px;
+         font-weight: 500;
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         white-space: nowrap;
+      }
+   }
+
+   &__green {
+      border-radius: 5px;
+      background: #2e6125;
+      width: 85%;
+      height: 100%;
+   }
+
+   &__favorites {
+      @include flex();
+      gap: 10px;
+
+      color: #e8e9eb;
+      font-size: 14px;
+      font-weight: 500;
+   }
+
+   &__heart {
+      border-radius: 10px;
+      background: #1b2133;
+
+      width: 58.871px;
+      height: 58.871px;
+      @include flex();
+   }
+}
+.des-like {
+   padding-top: 10px;
 }
