@@ -20,7 +20,7 @@
          display: block;
          width: 100%;
          height: 400px;
-         position: absolute;
+         position: fixed;
          bottom: 0px;
          z-index: -1;
          background: linear-gradient(transparent, #1e2538);
@@ -140,32 +140,78 @@
          </div>
 
       </div>
-      <!-- <div class="more-info">
+      <div class="more-info">
          <div class="more-info__container">
             <div class="more-info__nav">
                <ul>
                   <li>
-                     <p>Год</p><a href="#" data-type="year"></a>
+                     <p>Год:</p><a href="#" data-type="year"></a>
                   </li>
                   <li>
-                     <p>Страна</p><a href="#" data-type="countries"></a>
+                     <p>Страна:</p><a href="#" data-type="countries"></a>
                   </li>
                   <li>
-                     <p>Слоган</p><a href="#" data-type="slogan"></a>
+                     <p>Слоган:</p><a href="#" data-type="slogan"></a>
                   </li>
                   <li>
-                     <p>Жанр</p><a href="#" data-type="genres"></a>
+                     <p>Жанр:</p><a href="#" data-type="genres"></a>
                   </li>
                   <li>
-                     <p>Возраст</p><a href="#" data-type="ratingAgeLimits"></a>
+                     <p>Возраст:</p><a href="#" data-type="ratingAgeLimits"></a>
                   </li>
                   <li>
-                     <p>Время</p><a href="#" data-type="countries"></a>
+                     <p>Время:</p><a href="#" data-type="filmLength"></a>
                   </li>
                </ul>
             </div>
          </div>
-      </div> -->
+      </div>
+      <div class="staff">
+         <div class="staff__top sec-top">
+            <h1 class="sec-top__title">В главных ролях:</h1>
+            <div class="sec-top__more">Все актёры <img src="/public/icons/arrow.svg" alt=""></div>
+         </div>
+         <div class="staff__container">
+
+         </div>
+      </div>
+      <section class="trailer" style="      max-width: 1433px;
+      margin: 0 auto;">
+         <div class="trailer__container ">
+            <div class="trailer__top sec-top">
+               <h1 class="sec-top__title">Трейлеры фильма</h1>
+               <div class="sec-top__more">Все трейлеры <img src="/public/icons/arrow.svg" alt=""></div>
+            </div>
+            <div class="trailer__item tr-item">
+               <div class="tr-item__top">
+                  <iframe  height="506" src="https://www.youtube.com/embed/mccs8Ql8m8o" title="La Ligne Verte - Bande Annonce Officielle (VF) - Tom Hanks / Michael Clarke Duncan" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="main-img"> </iframe>
+               </div>
+               <div class="tr-item__bottom">
+                  <div class="tr-item__left">
+                     <h2 class="tr-item__title">Форсаж 9</h2>
+                     <div class="cl-net">
+                        <img src="/public/icons/social-network.png" alt="">
+                        <img src="/public/icons/dot-dot-dot.svg" alt="">
+                     </div>
+                  </div>
+                  <div class="tr-item__right">
+                     <div class="tr-item__like-box">
+                        <div class="tr-item__like">
+                           <img src="/public/icons/like.svg" alt="">
+                        </div>
+                        <p>3 245</p>
+                     </div>
+                     <div class="tr-item__like-box">
+                        <div class="tr-item__like des-like">
+                           <img src="/public/icons/des-like.svg" alt="">
+                        </div>
+                        <p>420</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
    </div>
    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
    <script src="index.js" type="module"></script>

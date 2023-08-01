@@ -32,11 +32,13 @@ export function header_reload(place) {
 
 export function reload_item(place, arr) {
    place.innerHTML = ''
+   console.log(arr);
+
    for (let item of arr) {
       place.innerHTML += `<div class="item" id="${item.kinopoiskId}">
       <div class="item__top">
          <img src="${item.posterUrl}" alt="">
-         <div class="item__reyting"${item.ratingKinopoisk}</div>
+         <div class="item__reyting">${item.ratingKinopoisk}</div>
          <div class="blue-effect">
             <button>Карточка фильма</button>
          </div>
@@ -61,59 +63,89 @@ export let card = [
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:10
+      id: 10
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:9
+      id: 9
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:8
+      id: 8
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:7
+      id: 7
    }, {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:6
+      id: 6
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:5
+      id: 5
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:4
+      id: 4
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:3
+      id: 3
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:2
+      id: 2
    },
    {
       title: "Побег из Претории",
       description: "Триллер",
       img: "/public/icons/image 1.png",
-      id:1
+      id: 1
    }
 ]
+let a = {
+   description: null,
+   nameEn: "Frank Darabont",
+   nameRu: "Фрэнк Дарабонт",
+   posterUrl: "https://kinopoiskapiunofficial.tech/images/actor_posters/kp/24262.jpg",
+   professionKey: "DIRECTOR",
+   professionText: "Режиссеры",
+   staffId: 24262
+}
+
+export function reload_staff(arr, place) {
+   place.innerHTML = '';
+   for (let item of arr) {
+      let div = document.createElement('div');
+      let img = document.createElement('img');
+      let title = document.createElement('h3');
+      let sup_title = document.createElement('h5');
+      let p = document.createElement('p');
+      //style
+      div.className = 'staff__item';
+      //inner
+      img.src = item.posterUrl;
+      title.innerText = item.nameRu;
+      sup_title.innerText = item.nameEn;
+      p.innerText = item.professionText;
+      //append 
+      div.append(img , title , sup_title , p);
+      place.append(div);
+   }
+}
