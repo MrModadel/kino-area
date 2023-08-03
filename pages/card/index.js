@@ -1,9 +1,9 @@
-import { header_reload, card, reload_staff } from "../../modules/ui";
+import { header_reload, card, reload_staff, footer_reload } from "../../modules/ui";
 let wrapper = document.querySelector('.wrapper');
+header_reload(wrapper);
+footer_reload(wrapper);
 
 
-
-header_reload(wrapper)
 let img = document.querySelector('.left img'),
    title = document.querySelector('.right__title'),
    sup_title = document.querySelector('.right__suptitle'),

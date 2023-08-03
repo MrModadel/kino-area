@@ -37,7 +37,6 @@ a {
    min-height: 100%;
    overflow: hidden;
    padding: 0 16px;
-
 }
 .container {
    max-width: 1920px;
@@ -162,6 +161,10 @@ a {
       ul {
          @include flex();
          gap: 20px;
+         li a {
+            transition: 0.3s ease;
+            color: rgba(255, 255, 255, 0.35);
+         }
       }
    }
    &__more {
@@ -169,7 +172,6 @@ a {
       gap: 27px;
    }
 }
-
 .items-wrapper {
    display: grid;
    grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -299,6 +301,21 @@ a {
       flex-direction: column;
       gap: 8px;
       position: relative;
+      min-width: 344.371px;
+      height: 247.016px;
+      transition: 0.3s ease;
+      img:nth-child(2) {
+         transition: 0.3s ease;
+      }
+      img:first-child {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+      img:nth-child(2):active {
+         scale: 0.7;
+         transition: 0.3s ease;
+      }
       &:first-child {
          margin-left: 10px;
       }
@@ -439,7 +456,9 @@ a {
    &__container {
       margin-top: 75px;
    }
-
+   &__expected{
+      padding: 20px 0 0 0 ;
+   }
    &__top {
       @include flex();
       justify-content: space-between;
@@ -535,7 +554,16 @@ a {
          font-weight: 500;
          line-height: normal;
       }
-
+      &__variatn {
+         @include flex();
+         gap: 18px;
+         .active {
+            text-decoration: underline;
+         }
+         a {
+            color: #6d717d;
+         }
+      }
       &__description {
          color: #fff;
          font-family: Qanelas;
@@ -670,8 +698,6 @@ a {
    max-width: 1433px;
    margin: 0 auto;
    &__top {
-
-
       @include flex();
       justify-content: space-between;
       margin-top: 40px;
@@ -679,11 +705,10 @@ a {
 
    &__container {
       display: grid;
-      grid-template-columns: repeat(5 , 1fr);
+      grid-template-columns: repeat(5, 1fr);
       justify-items: center;
       margin-top: 30px;
       gap: 30px;
-
    }
    &__item {
       display: flex;
@@ -709,4 +734,37 @@ a {
          color: #f2f60f;
       }
    }
+}
+.active {
+   color: #fff !important  ;
+}
+
+.foto {
+   max-width: 1433px;
+   margin: 0 auto;
+   &__top {
+      @include flex();
+      justify-content: space-between;
+      margin-top: 40px;
+   }
+
+   &__container {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 340px);
+      gap: 42px 22px;
+      img {
+         width: 100%;
+         height: 100%;
+         border-radius: 10px;
+      }
+      img:first-child {
+         grid-column: 1/3;
+      }
+      img:nth-child(5){
+         grid-column: 2/4;
+      }
+   }
+}
+.box {
 }

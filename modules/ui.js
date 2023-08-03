@@ -145,7 +145,124 @@ export function reload_staff(arr, place) {
       sup_title.innerText = item.nameEn;
       p.innerText = item.professionText;
       //append 
-      div.append(img , title , sup_title , p);
+      div.append(img, title, sup_title, p);
       place.append(div);
    }
+}
+
+export function reload_next(next, prev, count, place, numder = 0, max) {
+   let n = numder;
+   let last_n = numder + 4;
+   let count_n = 1;
+   next.onclick = () => {
+      if (last_n < max * 4) {
+         n += 4;
+         last_n += 4;
+         count_n += 1;
+         console.log(n, last_n);
+
+         fetch_reload(n, last_n, place)
+            .then(() => {
+               count.innerHTML = count_n + '/' + max;
+            })
+      }
+   }
+   prev.onclick = () => {
+      console.log(n);
+
+      if (n > 0) {
+         n -= 4;
+         last_n -= 4;
+         count_n -= 1;
+         fetch_reload(n, last_n, place)
+            .then(() => {
+               count.innerHTML = count_n + '/' + max;
+            })
+      }
+   }
+
+   async function fetch_reload(n1, n2, place) {
+      await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films', {
+         method: 'GET',
+         headers: {
+            'X-API-KEY': '3c25d2e7-bb7e-4d62-9721-145b3f9c34e9',
+            'Content-Type': 'application/json',
+         },
+      })
+         .then(res => res.json())
+         .then(json => reload_item(place, json.items.slice(n1, n2)))
+         .catch(err => console.log(err))
+   }
+}
+
+export function footer_reload(place) {
+   let footer = document.createElement('footer');
+   footer.classList.add('footer');
+   footer.innerHTML = `
+   <div class="footer__container container">
+      <div class="footer__expected">
+         <div class="footer__top sec-top">
+            <h1 class="sec-top__title">Ожидаемые новинки</h1>
+            <div class="arrows">
+               <img class="arrows__one  tr-arrow__one" src="/public/icons/arrow.svg" alt="">
+               <span class="tr-count">1/5</span>
+               <img class="arrows__two  tr-arrow__two" src="/public/icons/arrow.svg" alt="">
+            </div>
+         </div>
+         <div class="footer__items items-wrapper">
+            <div class="item">
+               <div class="item__top">
+                  <img src="/public/icons/image 1.png" alt="">
+               </div>
+               <div class="item__bottom">
+                  <h4 class="item__title">Побег из Претории</h4>
+                  <p class="item__p">Триллер</p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="item__top">
+                  <img src="/public/icons/image 1.png" alt="">
+               </div>
+               <div class="item__bottom">
+                  <h4 class="item__title">Побег из Претории</h4>
+                  <p class="item__p">Триллер</p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="item__top">
+                  <img src="/public/icons/image 1.png" alt="">
+               </div>
+               <div class="item__bottom">
+                  <h4 class="item__title">Побег из Претории</h4>
+                  <p class="item__p">Триллер</p>
+               </div>
+            </div>
+            <div class="item">
+               <div class="item__top">
+                  <img src="/public/icons/image 1.png" alt="">
+               </div>
+               <div class="item__bottom">
+                  <h4 class="item__title">Побег из Претории</h4>
+                  <p class="item__p">Триллер</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="footer__end">
+      <img src="/public/icons/social-network.png" alt="">
+      <nav class="sec-top__nav">
+         <ul>
+            <li><a href="#">Афиша</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Персоны</a></li>
+            <li><a href="#">Рейтинги</a></li>
+            <li><a href="#">Рецензии</a></li>
+            <li><a href="#">Каталог фильмов</a></li>
+         </ul>
+      </nav>
+      <a href="#" class="footer__io">2020 © Kinoarea. Все права защищены</a>
+      <a href="#" class="footer__polit">Политика конфиденциальности</a>
+   </div>`
+   place.append(footer)
 }
