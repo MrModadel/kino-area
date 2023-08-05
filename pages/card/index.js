@@ -3,7 +3,7 @@ let wrapper = document.querySelector('.wrapper');
 header_reload(wrapper);
 footer_reload(wrapper);
 
-
+//https://kinopoiskapiunofficial.tech/api/v2.1/films/100/sequels_and_prequels
 let img = document.querySelector('.left img'),
    title = document.querySelector('.right__title'),
    sup_title = document.querySelector('.right__suptitle'),
