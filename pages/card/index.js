@@ -2,8 +2,6 @@ import { header_reload, card, reload_staff, footer_reload } from "../../modules/
 let wrapper = document.querySelector('.wrapper');
 header_reload(wrapper);
 footer_reload(wrapper);
-
-//https://kinopoiskapiunofficial.tech/api/v2.1/films/100/sequels_and_prequels
 let img = document.querySelector('.left img'),
    title = document.querySelector('.right__title'),
    sup_title = document.querySelector('.right__suptitle'),
@@ -140,7 +138,7 @@ fetch('https://kinopoiskapiunofficial.tech/api/v1/staff?filmId=' + l, {
    },
 }).then(res => res.json())
    .then(json => {
-      reload_staff(json.slice(0 , 10), staff__container)
+      reload_staff(json.slice(0, 10), staff__container)
    })
 
 fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/' + l + '/videos', {
@@ -153,6 +151,5 @@ fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films/' + l + '/videos', {
    .then(json => {
       let { items } = json;
       let item = items[0];
-      video.src = "https://www.youtube.com/embed/"+item.url.split('=').at(-1);
+      video.src = "https://www.youtube.com/embed/" + item.url.split('=').at(-1);
    })
-

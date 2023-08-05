@@ -456,8 +456,8 @@ a {
    &__container {
       margin-top: 75px;
    }
-   &__expected{
-      padding: 20px 0 0 0 ;
+   &__expected {
+      padding: 20px 0 0 0;
    }
    &__top {
       @include flex();
@@ -761,10 +761,198 @@ a {
       img:first-child {
          grid-column: 1/3;
       }
-      img:nth-child(5){
+      img:nth-child(5) {
          grid-column: 2/4;
       }
    }
 }
-.box {
+.user {
+   &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      padding: 40px;
+   }
+
+   &__title {
+      color: #fff;
+      font-family: Qanelas;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+   }
+   &__name {
+      color: #fff;
+      font-family: Qanelas;
+      font-size: 50px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+   }
+
+   &__wrapper {
+      display: grid;
+      grid-template-columns: 40% 60%;
+      gap: 30px;
+   }
+
+   &__description {
+      color: rgba(255, 255, 255, 0.8);
+      font-family: Qanelas;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+   }
+
+   &__icons {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 12px;
+   }
+   .right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+   }
+   .more-info__nav {
+      margin: 0;
+      ul {
+         gap: 60px;
+      }
+   }
+}
+
+.setting {
+   border-radius: 10px;
+   background: #1e2538;
+   border: 0;
+   @include flex();
+   gap: 8px;
+   padding: 20px 28px;
+   position: absolute;
+   right: 20px;
+   top: 20px;
+   cursor: pointer;
+}
+.cl-net-box {
+   display: none;
+   flex-direction: column;
+   gap: 18px;
+   &__title {
+      color: #fff;
+      font-family: Qanelas;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+   }
+   input {
+      color: #fff;
+      font-family: Qanelas;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 166.5%; /* 28.305px */
+      height: 54px;
+      width: 100%;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: #1e2538;
+      @include flex();
+      border: 0;
+      outline: none;
+      padding-left: 18px;
+   }
+}
+.settings-menu {
+   display: none;
+   grid-template-columns: 260px 260px;
+   gap: 18px;
+   input {
+      color: #fff;
+      font-family: Qanelas;
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 166.5%; /* 28.305px */
+      width: 260px;
+      height: 54px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: #1e2538;
+      @include flex();
+      border: 0;
+      outline: none;
+      padding-left: 18px;
+   }
+   input[name="genres"] {
+      grid-column: 1/3;
+      width: 100%;
+   }
+   textarea {
+      width: 541px;
+      height: 252px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: #1e2538;
+      padding: 10px;
+      border: 0;
+      outline: 0;
+   }
+}
+.cl-net-item {
+   display: block;
+   width: 26.273px;
+   height: 26.273px;
+   flex-shrink: 0;
+   img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+   }
+}
+.header__social-network-box {
+   @include flex();
+   gap: 18px;
+}
+
+.modal {
+   padding: 30px;
+   position: absolute;
+   top: -240px;
+   left: 50%;
+   transform: translateX(-50%);
+   transition: .3s ease;
+   @include flex();
+   &__container {
+      width: 815px;
+      padding: 18px;
+      height: 71px;
+      @include flex();
+      border-radius: 10px;
+      background: #fff;
+      input {
+         width: 100%;
+         height: 71px;
+         border: 0;
+         outline: 0;
+         color: #151a26;
+         font-size: 18px;
+      }
+      img {
+         margin-left: 10px;
+      }
+   }
+   &__close{
+      font-size: 40px;
+      cursor: pointer;
+      position: absolute;
+      top: 0px;
+      right: 8px;
+   }
 }

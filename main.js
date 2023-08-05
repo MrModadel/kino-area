@@ -5,6 +5,17 @@ let spector_json = [];
 let wrapper = document.querySelector('.wrapper');
 header_reload(wrapper)
 footer_reload(wrapper)
+let search = document.querySelector('.header__search');
+let modal = document.querySelector('.modal');
+let close = document.querySelector('.modal__close')
+console.log(search);
+
+search.onclick = () => {
+   modal.style.top = '50px';
+}
+close.onclick = () => {
+   modal.style.top = '-240px';
+}
 await fetch('https://kinopoiskapiunofficial.tech/api/v2.2/films', {
    method: 'GET',
    headers: {
@@ -39,7 +50,6 @@ items.forEach(item => {
       iframe.src = clicks[0].dataset.src
    }
 })
-
 
 
 let lis = document.querySelectorAll('.now__nav ul li a');

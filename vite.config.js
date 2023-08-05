@@ -12,7 +12,8 @@ export default defineConfig({
          input: {
             main: resolve(__dirname, 'index.html'),
             card: resolve(__dirname, 'pages/card/index.html'),
-            actior: resolve(__dirname, 'pages/actior/index.html')
+            actior: resolve(__dirname, 'pages/actior/index.html'),
+            user: resolve(__dirname, 'pages/user/index.html')
          },
       },
    },

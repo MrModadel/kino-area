@@ -1,3 +1,6 @@
+import axios from "axios";
+let baseUrl = 'http://localhost:5050';
+
 export function header_reload(place) {
    let header = document.createElement('header');
    header.classList.add('header')
@@ -7,7 +10,9 @@ export function header_reload(place) {
          <img src="/public/icons/cinema.svg" alt="cinema" class="header__logo-img">
          <span>Kino</span>area
       </div>
+      <div class="header__social-network-box">
       <img src="/public/icons/social-network.png" alt="Social Network" class="header__social-network">
+      </div>
    </div>
    <nav class="header__nav">
       <ul>
@@ -27,7 +32,10 @@ export function header_reload(place) {
       <div class="header__btn btn">Войти</div>
    </div>
    </div>`
-   place.prepend(header)
+   place.prepend(header);
+   let icons = header.querySelector('.header__social-network-box');
+   axios.get(baseUrl + '/social_net')
+      .then(res => icons_reload(icons, res.data))
 }
 
 export function reload_item(place, arr) {
@@ -132,6 +140,8 @@ let a = {
 export function reload_staff(arr, place) {
    place.innerHTML = '';
    for (let item of arr) {
+      console.log(item);
+
       let div = document.createElement('div');
       let img = document.createElement('img');
       let title = document.createElement('h3');
@@ -147,6 +157,10 @@ export function reload_staff(arr, place) {
       //append 
       div.append(img, title, sup_title, p);
       place.append(div);
+
+      div.onclick = () => {
+         location.assign('/pages/actior/?staffId=' + item.staffId)
+      }
    }
 }
 
@@ -265,4 +279,19 @@ export function footer_reload(place) {
       <a href="#" class="footer__polit">Политика конфиденциальности</a>
    </div>`
    place.append(footer)
+}
+
+
+export function icons_reload(place, arr) {
+   place.innerHTML = ''
+   for (let item of arr) {
+      let itemDiv = document.createElement('a');
+      let img = document.createElement('img');
+      itemDiv.id = item.id
+      img.src = '/icons/' + item.name;
+      itemDiv.href = item.url;
+      itemDiv.classList.add('cl-net-item');
+      itemDiv.appendChild(img);
+      place.append(itemDiv);
+   }
 }
